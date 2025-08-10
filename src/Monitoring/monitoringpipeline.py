@@ -39,12 +39,15 @@ def monitor_model(new_data_path, target_column):
     score = r2_score(y, preds)
     print(f"Current R²: {score:.4f}")
 
+    # Define path
+    TRAINING_PIPELINE_PATH = os.path.join("src", "training pipeline", "trainingpipeline.py")
+
     if score < RETRAIN_THRESHOLD:
         print("Model performance low — retraining...")
-        subprocess.run(["python", "trainingpipeline.py"])
+        subprocess.run(["python", TRAINING_PIPELINE_PATH])
     elif score < TUNE_THRESHOLD:
         print("Model performance degraded — tuning parameters...")
-        subprocess.run(["python", "trainingpipeline.py", "--tune_only"])
+        subprocess.run(["python", TRAINING_PIPELINE_PATH, "--tune_only"])
     else:
         print("Model performance acceptable. No action taken.")
 

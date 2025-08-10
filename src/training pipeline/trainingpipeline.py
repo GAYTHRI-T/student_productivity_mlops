@@ -134,7 +134,7 @@ def log_tuned_model(model, model_name, score, params, dataset_version="v1.0"):
         mlflow.log_param("dataset_version", dataset_version)
         mlflow.log_params(params)
         mlflow.log_metric("r2_score", score)
-        mlflow.sklearn.log_model(model, artifact_path=model_name)
+        mlflow.sklearn.log_model(model, name=model_name)
         mlflow.set_tags({"stage": "tuned_model", "developer": "Gaythri"})
 
 # 9. Full pipeline
