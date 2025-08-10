@@ -13,6 +13,9 @@ import optuna
 import os
 import time
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Go 2 levels up
+MODEL_DIR = os.path.join(BASE_DIR, "model")
+
 # 1. Load the dataset from CSV
 def load_data(path):
     return pd.read_csv(path)
@@ -115,12 +118,12 @@ def tune_model(model_name, X_train, y_train):
 
 # 6. Save model as .pkl
 def save_model(model):
-    with open("../../model/best_model.pkl", "wb") as f: # 2 folders up
+    with open(os.path.join(MODEL_DIR, "best_model.pkl"), "w") as f:
         pickle.dump(model, f)
 
 # 7. Save expected column names for inference pipeline
 def save_expected_columns(columns):
-    with open("../../model/expected_columns.json", "w") as f: # 2 folders up
+    with open(os.path.join(MODEL_DIR, "expected_columns.json"), "w") as f:
         json.dump(columns, f)
 
 # 8. Log metrics and parameters to MLflow
