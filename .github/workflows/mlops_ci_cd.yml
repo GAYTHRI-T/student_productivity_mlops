@@ -31,11 +31,12 @@ jobs:
 
     # 4. Run Training Pipeline
     - name: Run Training Pipeline
-      run: python trainingpipeline.py
+      run: python "src/training pipeline/trainingpipeline.py"
+
 
     # 5. Run Monitoring Pipeline
     - name: Run Monitoring Pipeline
-      run: python monitoringpipeline.py
+      run: python "src/Monitoring/monitoringpipeline.py"
 
     # 6. Set up Docker Buildx
     - name: Set up Docker Buildx
