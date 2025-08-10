@@ -13,7 +13,7 @@ import optuna
 import os
 import time
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Go 2 levels up
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MODEL_DIR = os.path.join(BASE_DIR, "model")
 
 # 1. Load the dataset from CSV
