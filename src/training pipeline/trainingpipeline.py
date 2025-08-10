@@ -50,7 +50,7 @@ def train_models(X_train, y_train, X_test, y_test, dataset_version="v1.0"):
             mlflow.log_param("dataset_version", dataset_version)
             mlflow.log_metric("r2_score", score)
             mlflow.log_metric("training_time_sec", time.time() - start_time)
-            mlflow.sklearn.log_model(model, artifact_path=name)
+            mlflow.sklearn.log_model(model, name=name)
             mlflow.set_tags({"stage": "baseline", "developer": "Gaythri"})
 
     return scores
