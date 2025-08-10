@@ -61,9 +61,9 @@ jobs:
     # 9. Run Inference Pipeline in container for testing
     - name: Run FastAPI Inference Pipeline
       run: |
-        docker run -d -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest
+        docker run -d -p 9001:9001 ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest
         sleep 10
-        curl --fail http://localhost:8080/docs
+        curl --fail http://localhost:9001/docs
 
     # Give a text or string to be logged
     - name: Push Docker Image
