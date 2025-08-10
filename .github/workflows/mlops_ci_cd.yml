@@ -13,27 +13,56 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # 1. Checkout the repository
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    # 2. Set up Python
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: "3.12"
 
+    # 3. Install dependencies
     - name: Install dependencies
       run: |
         pip install --upgrade pip
         pip install -r requirements.txt
 
+    # 4. Run Training Pipeline
     - name: Run Training Pipeline
       run: python trainingpipeline.py
 
+    # 5. Run Monitoring Pipeline
     - name: Run Monitoring Pipeline
       run: python monitoringpipeline.py
 
-    - name: Build Docker Image
-      run: docker build -t student-productivity-api .
+    # 6. Set up Docker Buildx
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
 
+    # 7. Login to Docker Hub (requires secrets)
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    # 8. Build Docker Image
+    - name: Build Docker Image
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest .
+
+    # 9. Push Docker Image
+    - name: Push Docker Image
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest
+
+    # 10. Run Inference Pipeline in container for testing
+    - name: Run FastAPI Inference Pipeline
+      run: |
+        docker run -d -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest
+        sleep 10
+        curl --fail http://localhost:8080/docs
+
+    # Give a text or string to be logged
     - name: Push Docker Image
       run: echo "Skipping push to Docker Hub for now"
