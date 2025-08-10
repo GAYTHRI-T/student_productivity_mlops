@@ -53,11 +53,12 @@ jobs:
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v4
       with:
+        context: .
         file: ./DockerFile
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest
 
-    # . Run Inference Pipeline in container for testing
+    # 9. Run Inference Pipeline in container for testing
     - name: Run FastAPI Inference Pipeline
       run: |
         docker run -d -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest
