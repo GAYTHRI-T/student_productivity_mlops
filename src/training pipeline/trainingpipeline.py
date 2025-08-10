@@ -118,7 +118,7 @@ def tune_model(model_name, X_train, y_train):
 
 # 6. Save model as .pkl
 def save_model(model):
-    with open(os.path.join(MODEL_DIR, "best_model.pkl"), "w") as f:
+    with open(os.path.join(MODEL_DIR, "best_model.pkl"), "wb") as f:
         pickle.dump(model, f)
 
 # 7. Save expected column names for inference pipeline
