@@ -50,15 +50,15 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     # 8. Build Docker Image
-    - name: Build Docker Image
-      working-directory: ..
-      run: docker build -f Dockerfile -t ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest .
+    - name: Build and Push Docker Image
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest
 
-    # 9. Push Docker Image
-    - name: Push Docker Image
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest
-
-    # 10. Run Inference Pipeline in container for testing
+    # . Run Inference Pipeline in container for testing
     - name: Run FastAPI Inference Pipeline
       run: |
         docker run -d -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest
