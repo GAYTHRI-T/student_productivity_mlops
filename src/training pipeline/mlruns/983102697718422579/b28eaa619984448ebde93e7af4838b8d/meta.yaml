@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/gayth/student_productivity_mlops/src/training%20pipeline/mlruns/983102697718422579/b28eaa619984448ebde93e7af4838b8d/artifacts
+end_time: 1754716228520
+entry_point_name: ''
+experiment_id: '983102697718422579'
+lifecycle_stage: active
+run_id: b28eaa619984448ebde93e7af4838b8d
+run_name: unleashed-koi-23
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754716224869
+status: 3
+tags: []
+user_id: gayth

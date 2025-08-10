@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/gayth/student_productivity_mlops/src/training%20pipeline/mlruns/0/7e5241409d5d40e48c3b84f0ed1c7bd6/artifacts
+end_time: 1754672487604
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7e5241409d5d40e48c3b84f0ed1c7bd6
+run_name: bouncy-horse-22
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754672481475
+status: 3
+tags: []
+user_id: gayth

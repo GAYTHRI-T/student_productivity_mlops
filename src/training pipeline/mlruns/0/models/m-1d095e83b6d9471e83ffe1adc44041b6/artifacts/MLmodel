@@ -1,0 +1,22 @@
+artifact_path: file:///c:/Users/gayth/student_productivity_mlops/src/training%20pipeline/mlruns/0/models/m-1d095e83b6d9471e83ffe1adc44041b6/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.7
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+mlflow_version: 3.2.0
+model_id: m-1d095e83b6d9471e83ffe1adc44041b6
+model_size_bytes: 1186
+model_uuid: m-1d095e83b6d9471e83ffe1adc44041b6
+prompts: null
+run_id: 0625b05804e744e3ab8e11d0b976a686
+utc_time_created: '2025-08-07 16:34:29.438745'

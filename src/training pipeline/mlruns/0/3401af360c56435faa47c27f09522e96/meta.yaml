@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/gayth/student_productivity_mlops/src/training%20pipeline/mlruns/0/3401af360c56435faa47c27f09522e96/artifacts
+end_time: 1754584397351
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3401af360c56435faa47c27f09522e96
+run_name: glamorous-mouse-124
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754584392565
+status: 3
+tags: []
+user_id: gayth

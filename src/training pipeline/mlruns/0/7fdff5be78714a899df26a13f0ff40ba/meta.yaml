@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/gayth/student_productivity_mlops/src/training%20pipeline/mlruns/0/7fdff5be78714a899df26a13f0ff40ba/artifacts
+end_time: 1754584759612
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7fdff5be78714a899df26a13f0ff40ba
+run_name: sassy-perch-768
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754584754581
+status: 3
+tags: []
+user_id: gayth

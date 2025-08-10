@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/gayth/student_productivity_mlops/src/training%20pipeline/mlruns/0/5e99dbba8d6c4254a0788e292562c856/artifacts
+end_time: 1754715016332
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5e99dbba8d6c4254a0788e292562c856
+run_name: charming-lynx-73
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754715012726
+status: 3
+tags: []
+user_id: gayth

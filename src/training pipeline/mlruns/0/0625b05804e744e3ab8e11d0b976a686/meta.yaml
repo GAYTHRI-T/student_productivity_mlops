@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/gayth/student_productivity_mlops/src/training%20pipeline/mlruns/0/0625b05804e744e3ab8e11d0b976a686/artifacts
+end_time: 1754584474596
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0625b05804e744e3ab8e11d0b976a686
+run_name: suave-stag-718
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754584469211
+status: 3
+tags: []
+user_id: gayth

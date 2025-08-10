@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/gayth/student_productivity_mlops/src/training%20pipeline/mlruns/0/31f8dda0a8394b9ebe04cf4cd5947216/artifacts
+end_time: 1754714800794
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 31f8dda0a8394b9ebe04cf4cd5947216
+run_name: mysterious-snake-376
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754714793818
+status: 3
+tags: []
+user_id: gayth

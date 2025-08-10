@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/gayth/student_productivity_mlops/src/training%20pipeline/mlruns/0/e4c5aa1730da40a8802ef55576912294/artifacts
+end_time: 1754584601838
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e4c5aa1730da40a8802ef55576912294
+run_name: languid-ant-709
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754584596305
+status: 3
+tags: []
+user_id: gayth

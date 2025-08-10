@@ -1,0 +1,10 @@
+artifact_location: file:///c:/Users/gayth/student_productivity_mlops/src/training%20pipeline/mlruns/0/models/m-425179f72631495c9d582201d599b005/artifacts
+creation_timestamp: 1754672481650
+experiment_id: '0'
+last_updated_timestamp: 1754672487581
+model_id: m-425179f72631495c9d582201d599b005
+model_type: null
+name: XGBoost
+source_run_id: 7e5241409d5d40e48c3b84f0ed1c7bd6
+status: 2
+status_message: null

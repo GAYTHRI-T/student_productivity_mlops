@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/gayth/student_productivity_mlops/src/training%20pipeline/mlruns/0/d2e8d854d92c44b497af5a55eba9de09/artifacts
+end_time: 1754584179699
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d2e8d854d92c44b497af5a55eba9de09
+run_name: clean-mouse-417
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1754584169564
+status: 3
+tags: []
+user_id: gayth

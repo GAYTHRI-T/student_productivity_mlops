@@ -1,0 +1,10 @@
+artifact_location: file:///c:/Users/gayth/student_productivity_mlops/src/training%20pipeline/mlruns/0/models/m-1d095e83b6d9471e83ffe1adc44041b6/artifacts
+creation_timestamp: 1754584469342
+experiment_id: '0'
+last_updated_timestamp: 1754584474571
+model_id: m-1d095e83b6d9471e83ffe1adc44041b6
+model_type: null
+name: LinearRegression
+source_run_id: 0625b05804e744e3ab8e11d0b976a686
+status: 2
+status_message: null
