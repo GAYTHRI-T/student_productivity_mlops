@@ -6,14 +6,14 @@ import json
 import os
 
 # Load model and expected columns
-base_dir = os.path.dirname(__file__)
-MODEL_PATH = os.path.abspath(os.path.join(base_dir, "..", "..", "model", "best_model.pkl"))
-COLUMNS_PATH = os.path.abspath(os.path.join(base_dir, "..", "..", "model", "expected_columns.json"))
 
-with open(MODEL_PATH, "rb") as f:
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+MODEL_DIR = os.path.join(BASE_DIR, "model")
+
+with open(os.path.join(MODEL_DIR, "best_model.pkl"), "rb") as f:
     model = pickle.load(f)
 
-with open(COLUMNS_PATH, "r") as f:
+with open(os.path.join(MODEL_DIR, "expected_columns.json"), "r") as f:
     expected_columns = json.load(f)
 
 # FastAPI app
