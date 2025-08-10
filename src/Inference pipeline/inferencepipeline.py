@@ -38,7 +38,7 @@ class StudentData(BaseModel):
 @app.post("/predict")
 def predict(data: StudentData):
     # Convert input to DataFrame
-    input_df = pd.DataFrame([data.dict()])
+    input_df = pd.DataFrame([data.model_dump()])
     input_df = pd.get_dummies(input_df, drop_first=True)
 
     # Align columns with training
