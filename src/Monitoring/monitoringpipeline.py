@@ -13,6 +13,25 @@ COLUMNS_PATH = os.path.abspath(os.path.join(base_dir, "..", "..", "model", "expe
 TUNE_THRESHOLD = 0.80
 RETRAIN_THRESHOLD = 0.70
 
+NEW_DATA_PATH="data/new_data.csv"
+PROCESSED_DATA_PATH="data/processed_data.csv"
+
+ # Function to merge new data into processed data
+def merge_datasets():
+    if os.path.exists(NEW_DATA_PATH):
+        print("Merging new data with existing processed data...")
+        processed_df = pd.read_csv(PROCESSED_DATA_PATH)
+        new_df = pd.read_csv(NEW_DATA_PATH)
+
+        # Optional: remove duplicates if needed
+        merged_df = pd.concat([processed_df, new_df], ignore_index=True).drop_duplicates()
+
+        # Save back to processed_data.csv
+        merged_df.to_csv(PROCESSED_DATA_PATH, index=False)
+        print("Datasets merged and saved.")
+    else:
+        print("No new data found to merge.")
+
 def monitor_model(new_data_path, target_column):
     # Load latest model
     with open(MODEL_PATH, "rb") as f:
@@ -42,14 +61,17 @@ def monitor_model(new_data_path, target_column):
     # Define path
     TRAINING_PIPELINE_PATH = os.path.join("src", "training pipeline", "trainingpipeline.py")
 
+    # Decision logic
     if score < RETRAIN_THRESHOLD:
+        merge_datasets()
         print("Model performance low — retraining...")
         subprocess.run(["python", TRAINING_PIPELINE_PATH])
     elif score < TUNE_THRESHOLD:
+        merge_datasets()
         print("Model performance degraded — tuning parameters...")
         subprocess.run(["python", TRAINING_PIPELINE_PATH, "--tune_only"])
     else:
         print("Model performance acceptable. No action taken.")
 
 if __name__ == "__main__":
-    monitor_model("data/new_data.csv", "Productivity_Score")
+    monitor_model(NEW_DATA_PATH, "Productivity_Score")
