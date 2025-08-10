@@ -51,7 +51,8 @@ jobs:
 
     # 8. Build Docker Image
     - name: Build Docker Image
-      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest -f ./Dockerfile .
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/student-productivity-api:latest .
+      working-directory: ${{ github.workspace }}
 
     # 9. Push Docker Image
     - name: Push Docker Image
